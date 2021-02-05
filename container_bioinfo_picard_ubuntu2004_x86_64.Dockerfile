@@ -12,7 +12,7 @@ RUN mkdir /opt/spack-environment \
 &&   echo "    install_tree: /opt/software" \
 &&   echo "  view: /opt/view") > /opt/spack-environment/spack.yaml
 
-# modifications picard package installation
+# PATCH picard package installation
 
 RUN  sed "s/java@8\:/openjdk/g" /opt/spack/var/spack/repos/builtin/packages/picard/package.py > /opt/spack/var/spack/repos/builtin/packages/picard/package.py.NEW && mv /opt/spack/var/spack/repos/builtin/packages/picard/package.py.NEW /opt/spack/var/spack/repos/builtin/packages/picard/package.py
 
